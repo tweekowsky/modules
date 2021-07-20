@@ -1,0 +1,15 @@
+- pipeline: "test"
+  on: "CLICK"
+  refs:
+  - "refs/heads/main"
+  priority: "NORMAL"
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "Upload files to ubuntu.tests"
+    type: "SFTP"
+    input_type: "SCM_REPOSITORY"
+    login: "buddy"
+    password: "secure!MRJHwTdM3pmbXdm/NK1kiQ==.oBtxu+uvx7d38NNH29bDuQ=="
+    host: "ubuntu.tests"
+    port: "22"
+    authentication_mode: "PASS"
